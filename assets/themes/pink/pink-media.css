@@ -1,0 +1,18 @@
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  #nav-web {
+    display: none;
+  }
+  #nav-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 350px) {
+  #nav-web {
+    display: block;
+  }
+  #nav-mobile {
+    display: none;
+  }
+}
+/*# sourceMappingURL=pink-media.css.map */

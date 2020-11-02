@@ -1,0 +1,21 @@
+$minwidth-mobile:350px;
+$minwidth-web:300px;
+$maxwidth-web: 400px;
+
+@media screen and (min-width: $minwidth-web) and (max-width: $maxwidth-web){
+	#nav-web{
+		display: none;
+	}
+	#nav-mobile{
+		display: block;
+	}
+}
+ 
+@media (min-width:$minwidth-mobile){
+	#nav-web{
+		display: block;
+	}
+	#nav-mobile{
+		display: none;
+	}
+}

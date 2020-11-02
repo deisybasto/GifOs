@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>GifOs</title>
+    <link rel="stylesheet" href="./assets/themes/pink/pink-style.css" rel="stylesheet" media="all" id="themeCss" />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <header class="header">
+        <span class="header__text">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
+            <span class="header__counter js-counter"></span>
+        </span>
+    </header>
+    <section class="search">
+        <div class="container">
+            <div class="actionBar">
+                <img class="logo">
+                <div class="buttonsBar">
+                    <button class="btn btnDefault" onclick="upload()">Crear Guifos</button>
+                    <div class="themesBar">
+                        <button class="btn btnDefault" onclick="openThemeMenu()">Elegir Tema</button>
+                        <button class="btn btnDefault" onclick="openThemeMenu()">
+                            <i class="fa fa-sort-down"></i>
+                        </button>
+                        <div id="themeMenu" class="themesBarMenu">
+                            <button id="dayThemeBtn" class="themesBarMenuBtn"
+                                onclick="onSelectTheme('sailorDay')">Sailor Day</button>
+                            <button id="nightThemeBtn" class="themesBarMenuBtn"
+                                onclick="onSelectTheme('sailorNight')">Sailor Night</button>
+                        </div>
+                    </div>
+                    <div class="themesBar">
+                        <a href="misGifos.html">M</a><label>is guifos</label>
+                    </div>
+                </div>
+            </div>
+            <div class="window">
+                <div class="titleBar">
+                    <label class="titleText">Buscar</label>
+                </div>
+                <div class="containerSearch">
+                    <input type="text" class="inpSearch" id="inpTagSearch"
+                        placeholder="Busca gifs, hashtags, temas, busca lo que quieras...">
+                    <button class="btn btnAlternate" id="btnSearch"><a id="labelSearch">
+                            <i class="fa fa-search"></i>Buscar</a></button>
+                </div>
+            </div>
+            <div id="tagsBar" class="tagsBar">
+            </div>
+    </section>
+    <section id="search-results" class="results">
+        <div class="container">
+            <div id="divResultsTags" class="resultsTags"></div>
+        </div>
+        <div class="container">
+            <div id="divResultsText" class="resultsGifs"></div>
+        </div>        
+    </section>
+    <section class="suggestions" id="suggestions">
+        <div class="container">
+            <input type="text" class="titleInput" value="Hoy te sugerimos:" readonly />
+            <div id="gif_suggested"></div>
+        </div>
+        <div class="container">
+            <input type="text" class="titleInput" value="Tendencias:" readonly />
+            <div id="divSuggestedGifs" class="suggestedGifs">
+            </div>
+        </div>
+    </section>
+
+    <section class="search-results" id="results-found">
+        <div class="sr__container">
+            <div class="examples" id="egs">
+                <button class="eg" id="eg1">ejemplo 1</button>
+                <button class="eg" id="eg2">ejemplo 2</button>
+                <button class="eg" id="eg3">ejemplo 3</button>
+            </div>
+            <div class="sr__title">
+                <p id="title-resultados">
+                    Resultados:
+                </p>
+            </div>
+            <div class="sr__results">
+                <div class="sr"><img src="" alt="" id="sr-0">
+                    <div class="bottom-tags" id="hash1">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-1">
+                    <div class="bottom-tags" id="hash2">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-2">
+                    <div class="bottom-tags" id="hash3">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-3">
+                    <div class="bottom-tags" id="hash4">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-4">
+                    <div class="bottom-tags" id="hash5">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-5">
+                    <div class="bottom-tags" id="hash6">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-6">
+                    <div class="bottom-tags" id="hash7">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-7">
+                    <div class="bottom-tags" id="hash8">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-8">
+                    <div class="bottom-tags" id="hash9">#hashtag</div>
+                </div>
+                <div class="sr"><img src="" alt="" id="sr-9">
+                    <div class="bottom-tags" id="hash10">#hashtag</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+    </footer>
+    <script src="scripts/base.js"></script>
+    <script src="scripts/contador.js"></script>
+    <script src="scripts/tendencias.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/busqueda.js"></script>
+    <script src="scripts/serviceFind.js"></script>
+    <script src="scripts/busquedaTheme.js"></script>
+    <script src="scripts/autocomplete.js"></script>
+</body>
+
+</html>

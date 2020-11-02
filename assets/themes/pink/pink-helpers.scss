@@ -1,0 +1,28 @@
+@mixin item-menu($width, $left, $bkg-color) {
+    width: $width;
+    left: $left;
+    background-color: $bkg-color;
+}
+
+@mixin item-content($bkg-color) {
+    display: none;
+    border-color: $bkg-color;
+
+    &:target {
+        display: block;
+
+        .header {
+            background-color: $bkg-color;
+            border-color: $bkg-color;
+            transition: background-color 1s ease 2s;
+        }
+
+        .content {
+            border-color: $bkg-color;
+
+            .divCard {
+                border-color: $bkg-color;
+            }
+        }
+    }
+}

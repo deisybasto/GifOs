@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,KAAK;EACzD,AAAA,QAAQ,CAAA;IACP,OAAO,EAAE,IAAI;GACb;EACD,AAAA,WAAW,CAAA;IACV,OAAO,EAAE,KAAK;GACd;;;AAGF,MAAM,EAAE,SAAS,EAAE,KAAK;EACvB,AAAA,QAAQ,CAAA;IACP,OAAO,EAAE,KAAK;GACd;EACD,AAAA,WAAW,CAAA;IACV,OAAO,EAAE,IAAI;GACb",
+    "sources": [
+        "purple-media.scss"
+    ],
+    "names": [],
+    "file": "purple-media.css"
+}

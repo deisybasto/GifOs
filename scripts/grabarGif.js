@@ -1,0 +1,304 @@
+let metaStream = '';
+let stylebkg = '';
+let txtHeader = document.getElementById('txtHeader');
+let camera = document.getElementById('camera');
+let record = document.getElementById('record_capturar');
+let stopButton=document.getElementById('stop_capturar');
+let txtTimer=document.getElementById('timer');
+let divUmpload=document.getElementById('section_umpload');
+let timerResume=document.getElementById('timer_resume');
+let umpload=document.getElementById('umpload_captura');
+let repeat=document.getElementById('repeat_captura');
+let imgPlay=document.getElementById('img_play');
+let imgGlobe=document.getElementById('img-globe');
+let txtSubiendo=document.getElementById('texto-subiendo');
+let video=document.getElementById('miVideo');
+let umploadGif=document.getElementById('upload-bar');
+let tiemposubiendo=document.getElementById('tiempo-subiendo');
+let record_screen=document.getElementById('record_screen');
+let timeFraction=document.getElementById('time-fraction')
+let umploadButton=document.getElementById('umpload');
+let repeatButton=document.getElementById('repeat');
+let cancelUmpload=document.getElementById('cancel_umpload');
+let imgElm=document.getElementById('imgElem');
+let umploadCount=0;
+let statusd='';
+let intervalId;
+let archivo='';
+let form='';
+let urlIMG='';
+const localStorageTheme = window.localStorage.getItem('theme') || '';
+
+let controller=new AbortController();
+let signal=controller.signal;
+
+let theme=()=>{
+    if(localStorageTheme=='sailorNight'){
+     let themeStr=document.getElementById('themeCss');
+
+     return themeStr.href='assets/themes/purple/purple-style.css';
+    }
+}
+let navigatorMedia = navigator.mediaDevices.getUserMedia
+        ({
+            audio: false,
+            video: {
+                width: 832,
+                height: 434
+            }
+        });
+
+let buttonRecording = () => {
+    txtHeader.textContent = 'Captura Tu Guifo';
+    record.style.display='none';
+    stopButton.style.display='flex';
+    txtTimer.style.display='block';
+}
+
+let buttonStopRecording=()=>{
+    txtHeader.textContent='Vista Previa'
+    stopButton.style.display='none';
+    divUmpload.style.display='flex';
+    timerResume.style.display='flex';
+    imgPlay.style.display='inline';
+
+}
+
+let buttonInitRecord=()=>{
+    txtHeader.textContent='Un Chequeo Antes de Empezar';
+    divUmpload.style.display='none';
+    timerResume.style.display='none';
+    record.style.display='flex';
+    txtTimer.style.display='none';
+}
+
+let loaderUmpload=()=>{
+    imgGlobe.style.display='block';
+    txtSubiendo.style.display='inline';
+    umploadGif.style.display='flex';
+    tiemposubiendo.style.display='inline';
+    video.style.display='none';
+    document.getElementById('imgElem').style.display="none";
+    record_screen.style.background='white';
+    repeatButton.style.display='none';
+    umploadButton.style.display='none';
+    timerResume.style.display='none';
+    document.getElementById('section-timer').style.display='none';
+    cancelUmpload.style.display='inline';
+
+}
+let canceling=()=>{
+    imgGlobe.style.display='none';
+    txtSubiendo.style.display='none';
+    umploadGif.style.display='none';
+    tiemposubiendo.style.display='none';
+    cancelUmpload.style.display='none';
+    imgElm.style.display='block';
+    timerResume.style.display='flex';
+}
+ let clearInt= ()=>{
+    timeFraction.value=100;
+    clearInterval(intervalId);
+ }
+
+ let umpForm=()=>{
+    document.getElementById('record_div').style.display='none'
+    cancelUmpload.style.display='none'
+ }
+
+function initRecord() {
+    navigatorMedia.then((stream) => {
+            video.srcObject = stream;
+            metaStream = video.srcObject;
+        }).catch((err) =>  alert('No se puede acceder a tu cámara.Recarga la pagina'));
+
+    return navigatorMedia;
+
+};
+
+repeat.addEventListener('click',()=>{
+   location.reload();
+   buttonInitRecord();
+   initRecord();
+    
+ })
+
+let recording = () => {
+    buttonRecording();
+     initCrono();
+  navigatorMedia.then(async function(stream,recorder){
+      recorder= RecordRTC(stream, {
+        type: 'gif',
+        frameRate: 1,
+        quality: 480,
+        width: 832,
+        height: 434,
+        hidden: 240,
+    })
+    recorder.startRecording();
+   
+    
+    let previosUmpload =()=>{
+        buttonStopRecording();
+        stopCrono();
+        
+
+        recorder.stopRecording(function(){
+
+            archivo= new Blob();
+            archivo = recorder.getBlob();
+            urlIMG=URL.createObjectURL(archivo);
+            document.getElementById('miVideo').style.display="none"; 
+            document.getElementById('imgElem').style.display="block";
+            document.getElementById('imgElem').setAttribute('src',`${URL.createObjectURL(archivo)}`);
+
+            console.log(urlIMG);
+
+            form = new FormData();
+             form.append('file', archivo, 'myGif.gif');
+        })
+        paints();
+    };
+    
+    stopButton.addEventListener('click',()=>{
+        previosUmpload();
+    });
+
+    cancelUmpload.addEventListener('click',()=>{
+        controller.abort();
+        canceling();
+        document.getElementById('section-timer').style.display='flex';
+        document.getElementById('umpload').style.display='flex';
+        document.getElementById('repeat').style.display='flex';
+        document.getElementById('imgElem').setAttribute('src',`${urlIMG}`);
+        console.log(urlIMG)
+        clearInterval(intervalId);
+    
+      });
+       
+      
+
+             //-------------roman-----------------------//
+            umpload.addEventListener('click',()=>{
+            var gifURL = URL.createObjectURL(archivo);
+            statusd;
+            console.log(statusd);
+            intervalId=setInterval(()=>{
+                timeFraction.value=umploadCount;
+                umploadCount++
+                console.log(umploadCount);
+            },1000)
+            
+            loaderUmpload();
+            fetch('https://upload.giphy.com/v1/gifs?' + 'api_key=oQ8tvS61Gv8Wgf7zKTKIW06ry9HrANl5' + '&source_image_url=' + gifURL, {       
+                method: "POST",
+                body: form,
+                signal: signal
+            })
+            .then(Response => {
+                
+                 return Response.json();
+
+            })
+            .then(data => {
+
+                localStorage.setItem(`misGifs`, JSON.stringify(data));
+                console.log(data)
+                umpForm();
+                clearInt();
+                boxFileDownload();
+                
+            })
+            .catch(error => {
+                return error
+            });
+            console.log(statusd);
+            
+            //-------------roman-----------------------//
+        });
+       
+  })
+    
+};
+
+window.addEventListener('load', () => {
+    initRecord();
+    theme();  
+});
+
+
+//para revisar-------------------------------------------
+function placeNewGif() { 
+    //con esta función aparece en mis gifos el gif guardado recientemente 
+    console.log('placeNewGif se está ejecutando')
+    let newGif = document.createElement("div");
+    let imgInside = document.createElement("img"); 
+    newGif.classList.add('gif'); 
+    newGif.appendChild(imgInside);
+    let newGifIndex = urlGifArr.length-1;
+    imgInside.setAttribute('src', urlGifArr[newGifIndex]);
+    document.querySelector('.mg__saved').appendChild(newGif);
+}
+
+function placeRecordedGifs() { 
+    //con esta función se muestran los gifs guardados en la ventana "mis gifos"
+    //cuando cerras la ventana del navegador y entras nuevamente, por ejemplo
+    //es medio parecido a la anterior quizas puedas sintetizarlas en una sola
+    if(localStorage.getItem('serverGifUrl')!==null){
+        urlGifArr=JSON.parse(localStorage.getItem('serverGifUrl'));
+            console.log(urlGifArr.length);
+                console.log('placeRecordedGifs se está ejecutando')
+                for(i=0; i<urlGifArr.length; i++){
+                    let newGif = document.createElement("div");
+                    let imgInside = document.createElement("img"); 
+                    newGif.classList.add('gif');
+                    newGif.appendChild(imgInside);
+                    imgInside.setAttribute('src', urlGifArr[i]);
+                    console.log(i);
+                    document.querySelector('.mg__saved').appendChild(newGif);
+                }
+    }
+}
+
+
+// ESTAS SON LAS CLASES QUE SE AGREGAN A LOS ELEMENTOS CREADOS
+
+// .mg__saved{
+//     width: 100%;
+//     clear: both;
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 16px;
+//     .gif{
+//         width: 288px;
+//         max-width: 288px;
+//         height: 298px;
+//         position: relative;
+//         border: 1px solid black;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         img{
+//             width: 100%;
+//             height: 100%;
+//         }
+//         &:hover{
+//             cursor: pointer;
+//             border: 1px solid #110038;
+//             background: #E6E6E6;
+//             box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+//             width: 294px;
+//             height: 304px;
+//             padding: 2px;
+//             img{
+//                 width: calc(100% - 4px);
+//                 height: calc(100% - 4px);    
+//                 border: 1px dotted #110038;
+//             }
+//         }
+//     }
+    
+// }
+
+
+//para revisar-------------------------------------------

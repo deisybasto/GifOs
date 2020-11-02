@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>GifOs</title>
+    <link rel="stylesheet" href="assets/themes/pink/pink-style.css" rel="stylesheet" media="all" id="themeCss" />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <span class="header__text">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
+            <span class="header__counter js-counter"></span>
+        </span>
+    </header>
+    <section class="record">
+        <i class="arrow"></i>
+        <img class="logo">
+    </section>
+
+    <div class="record_div" id='record_div'>
+        <div class="record_header">
+            <a id="txtHeader">Un Chequeo Antes de Empezar</a>
+            <i class="close"></i>
+        </div>
+        <div class="record_screen" id='record_screen'>
+            <video id="miVideo" class="miVideo" autoplay></video>
+            <img id="imgElem" class="imgElm">
+            
+                <img src="./assets/images/favicon.ico" alt="globe_img" id="img-globe" class="img-globe">
+                <p id="texto-subiendo" class="texto-subiendo">Estamos subiendo tu guifo...</p>
+
+                <div id="upload-bar" class="umpload">
+                    <progress class="time-fraction" id="time-fraction" value="0" max="100"></progress>
+                </div>
+                <p id="tiempo-subiendo" class="tiempo-subiendo">Tiempo restante: <del>38 años</del> algunos minutos</p>
+            </div>
+            
+        </div>
+       <div class="record_button" id="record_button">
+        <div class="record_capturar" id="record_capturar" onclick="recording()">
+            <a class="capturar" id="grabar">Capturar</a>
+            <i class="camera" id="camera"></i>
+        </div>
+       
+        <div class="stop_capturar" id="stop_capturar">
+            <a class="stop" id="stop">Listo</a>
+            <i class="stop_logo" id="stop_log"></i>
+        </div>
+        <div class="section_umpload" id="section_umpload">
+        <div class="umpload_captura" id="umpload_captura">
+            <a class="umpload" id="umpload">Subir Guifo</a>
+        </div>
+        <div class="repeat_captura" id="repeat_captura">
+            <a class="repeat" id="repeat">Repetir captura</a>
+        </div>
+        </div> 
+        <div class="cancel_umpload" id="cancel_umpload">
+            <a>Cancelar</a>
+       </div>
+       </div>
+    
+       <div class="section_timer" id='section-timer'>
+           <div class="timer" id="timer">
+           </div>
+           <i class="img_play" id="img_play"></i>
+           <div class="resume_section" id="timer_resume">
+               <div class="bar_time">
+               <div class="timer_div" id=timer_div_1></div>
+               <div class="timer_div" id=timer_div_2></div>
+               <div class="timer_div" id=timer_div_3></div>
+               <div class="timer_div" id=timer_div_4></div>
+               <div class="timer_div" id=timer_div_5></div>
+               <div class="timer_div" id=timer_div_6></div>
+               <div class="timer_div" id=timer_div_7></div>
+               <div class="timer_div" id=timer_div_8></div>
+               <div class="timer_div" id=timer_div_9></div>
+               <div class="timer_div" id=timer_div_10></div>
+               <div class="timer_div" id=timer_div_11></div>
+               <div class="timer_div" id=timer_div_12></div>
+               <div class="timer_div" id=timer_div_13></div>
+               <div class="timer_div" id=timer_div_14></div>
+               <div class="timer_div" id=timer_div_15></div>
+               <div class="timer_div" id=timer_div16></div>
+               </div>
+           </div>
+       </div>
+       
+    </div>
+    <section id="boxFileDownLoad" class="boxFileDownLoad">
+        <div class="download_header">
+            <a id="txtHeader">Guifo subido con èxito</a>
+            <i class="close"></i>
+        </div>
+        <div class="boxConfirmDow">
+            <div class="downImg">
+            <img id="previewDown">
+            </div>
+            <div class="downButtons">
+            <a>Guifo creado con èxito</a>
+            <a type="button" class="downCopy">Copiar enlance gif</a>
+            <a type="button" class="downFile">Descargar gif</a>
+            </div>
+            </div>
+            <div class="downListo">
+                <a href="misGifos.html">Listo</a>
+            </div>
+        </div>
+
+    </section>
+    
+
+    <script src="scripts/contador.js"></script>
+    <script src="scripts/descargarArchivo.js"></script>
+    <script src="scripts/cronometro.js"></script>
+    <script src="scripts/grabarGif.js"></script>
+    
+</body>

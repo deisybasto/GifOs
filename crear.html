@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>Sube tus Gifos - gifOS</title>
+    <link type="text/css" rel="stylesheet" href="/GifOs/style.css">
+
+    
+    <link rel="stylesheet" href="./assets/themes/pink/pink-style.css" rel="stylesheet" media="all" id="themeCss" />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header class="header">
+        <span class="header__text">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
+            <span class="js-counter"></span>
+        </span>
+    </header>
+    <div class="content">
+
+        <header>
+            <div class="nav-bar">
+                <a href="index.html"><img class="back-arrow" src="/GifOs/assets/images/arrow.svg" alt=""><img id="img-header"
+                        src="/GifOs/assets/images/gifOF_logo.png" alt=""></a>
+            </div>
+        </header>
+
+        <section class="create-gif-section">
+            <p class="create-gif-title">Crear Guifos</p>
+            <div class="create-gif-window">
+                <div class="window-img"><img src="assets/images/window img.png" alt=""></div>
+                <div>
+                    <p class="subtitle-window"><strong>Aquí podrás crear tus propios guifos</strong></p>
+                    <div class="create-gif-text">
+                        <p>Crear tu<span class="it-bld">guifo</span>es muy fácil, graba cualquier imagen con tu cámara y
+                            obtén guifos
+                            personalizados.
+                            Los pasos para crear tu guifo son:</p>
+                        
+                        <p>
+                            <p><b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</p>
+                            
+                            <p><b>2)</b> Capturar tu momento guifo</p>
+                            
+                            <p><b>3)</b> Revisar el momento</p>
+                            
+                            <p><b>4)</b> Listo para subir y compartir!</p>
+                            
+                            <p>¿Quieres comenzar a crear tu<span class="it-bld">guifo</span>ahora?</p>
+                        </p>
+                        <div class="create-gif-btns">
+                            <a href="index.html"><button
+                                    class="btn-create-gif cancel"><span>Cancelar</span></button></a>
+                            <button class="btn-create-gif confirm" onclick="grabar()"><span>Comenzar</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+       
+        <div class="my-gifos">
+            <div class="title-section">Mis Guifos: </div>
+            <div id="mygifos"></div>
+        </div>
+
+        <div class="gifos-saved">
+            <div class="title-section">Guifos guardados: </div>
+            <div id="savedgifos"></div>
+        </div>
+
+    </div>
+
+  
+
+
+
+<script src="scripts/base.js"></script>
+<script src="/GifOs/scripts/contador.js"></script>
+<script src="scripts/tendencias.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/busqueda.js"></script>
+<script src="scripts/serviceFind.js"></script>
+<script src="scripts/busquedaTheme.js"></script>
+<script src="scripts/autocomplete.js"></script>
+
+</body>
+
+</html>
