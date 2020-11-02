@@ -1022,21 +1022,19 @@ body {
         box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;  
       }
     }
-    .downListo{
-      left: 891px;
-      width:144px;
-      background: #F7C9F3;
-      border: 1px solid #110038;
-      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-      a{
-        background: #F7C9F3;
-      border: 1px solid #110038;
-      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-      padding: 4%;
-      }
-    }
+    
 
   }
-
-
-
+  .downListo{
+    flex-direction: row-reverse;
+    margin-right: 5%;
+    margin-top: 2%;
+    display: flex;
+   
+    a{
+      background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    padding: 1% 10%;
+    }
+  }

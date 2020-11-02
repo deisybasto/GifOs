@@ -11,7 +11,7 @@
    }
    
    //'buttonDownload' es un elemento que cree en mi proyecto.
-   //Llamalo como vos quieras.
+   //Llamalo como vos quieras.å
    //Está comentado por que seguramente tendrás que moverlo.
    //Con la función que está adentro, una vez que apretás el botón,
    //debería descargarte el archivo
@@ -23,7 +23,16 @@
   });*/
   
   //para revisar-------------------------------------
-
+  let idGifs={};
+  let idURL=''
+  const key='addArr'
+  
   let boxFileDownload= ()=>{
     document.getElementById('boxFileDownLoad').style.display='block';
+}
+
+let sendGifsLocalStr= (idURL)=>{
+ idGifs.push(idURL);
+ console.log(idGifs);
+ localStorage.setItem(key,idGifs);
 }
