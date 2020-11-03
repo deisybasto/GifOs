@@ -1268,4 +1268,8 @@ body {
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   padding: 1% 10%;
 }
+
+.labelCopy {
+  display: none;
+}
 /*# sourceMappingURL=pink-style.css.map */

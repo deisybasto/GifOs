@@ -27,7 +27,11 @@ let intervalId;
 let archivo='';
 let form='';
 let urlIMG='';
+let imgReady=document.getElementById('previewDown');
 const localStorageTheme = window.localStorage.getItem('theme') || '';
+let idurl='';
+
+
 
 let controller=new AbortController();
 let signal=controller.signal;
@@ -202,11 +206,19 @@ let recording = () => {
             })
             .then(data => {
 
-                localStorage.setItem(`misGifs`, JSON.stringify(data));
-                console.log(data)
+                localStorage.setItem(`misGifs1`, JSON.stringify(data));
+                
                 umpForm();
                 clearInt();
                 boxFileDownload();
+                imgReady.setAttribute('src',`${urlIMG}`);
+                imgReady.style.width='365px';
+                imgReady.style.height='191px';
+                idurl=data.data.id
+
+                
+               // sendGifsLocalStr(JSON.stringify(data))
+                
                 
             })
             .catch(error => {
@@ -224,6 +236,7 @@ let recording = () => {
 window.addEventListener('load', () => {
     initRecord();
     theme();  
+    
 });
 
 
@@ -261,44 +274,3 @@ function placeRecordedGifs() {
 }
 
 
-// ESTAS SON LAS CLASES QUE SE AGREGAN A LOS ELEMENTOS CREADOS
-
-// .mg__saved{
-//     width: 100%;
-//     clear: both;
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr);
-//     gap: 16px;
-//     .gif{
-//         width: 288px;
-//         max-width: 288px;
-//         height: 298px;
-//         position: relative;
-//         border: 1px solid black;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         img{
-//             width: 100%;
-//             height: 100%;
-//         }
-//         &:hover{
-//             cursor: pointer;
-//             border: 1px solid #110038;
-//             background: #E6E6E6;
-//             box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-//             width: 294px;
-//             height: 304px;
-//             padding: 2px;
-//             img{
-//                 width: calc(100% - 4px);
-//                 height: calc(100% - 4px);    
-//                 border: 1px dotted #110038;
-//             }
-//         }
-//     }
-    
-// }
-
-
-//para revisar-------------------------------------------
