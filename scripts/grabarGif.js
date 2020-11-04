@@ -218,6 +218,22 @@ let recording = () => {
 
                 
                // sendGifsLocalStr(JSON.stringify(data))
+               let reader = new FileReader(); 
+               reader.readAsDataURL(archivo); 
+               reader.onloadend = function () { 
+               let base64String = reader.result;
+               let gifString=base64String.substring(22);
+               let order = localStorage.length + 1;
+               gifOrder = 'gif ' + order;
+              localStorage.setItem(gifOrder, gifString);
+                }
+                let buttonDownload=document.getElementById('buttonDownload')
+
+              buttonDownload.addEventListener('click', ()=>{
+               let order=localStorage.length
+               let gifOrder = 'gif ' + order
+               recorder.save(localStorage.getItem(gifOrder));
+  });
                 
                 
             })
