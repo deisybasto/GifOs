@@ -180,9 +180,9 @@ let recording = () => {
     
       });
        
-      
+        
 
-             //-------------roman-----------------------//
+           
             umpload.addEventListener('click',()=>{
             var gifURL = URL.createObjectURL(archivo);
             statusd;
@@ -206,7 +206,7 @@ let recording = () => {
             })
             .then(data => {
 
-                localStorage.setItem(`misGifs1`, JSON.stringify(data));
+                localStorage.setItem(nameLstGif(), JSON.stringify(data));
                 
                 umpForm();
                 clearInt();
@@ -242,7 +242,7 @@ let recording = () => {
             });
             console.log(statusd);
             
-            //-------------roman-----------------------//
+            
         });
        
   })

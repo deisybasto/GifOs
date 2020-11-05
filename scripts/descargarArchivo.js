@@ -1,6 +1,4 @@
-   
-  
-  //para revisar-------------------------------------
+
   let idGifs={};
 
   let labelCopy=document.getElementById('labelCopy')
