@@ -234,8 +234,7 @@ let recording = () => {
                let gifOrder = 'gif ' + order
                recorder.save(localStorage.getItem(gifOrder));
   });
-                
-                
+                                
             })
             .catch(error => {
                 return error
@@ -254,39 +253,3 @@ window.addEventListener('load', () => {
     theme();  
     
 });
-
-
-//para revisar-------------------------------------------
-function placeNewGif() { 
-    //con esta función aparece en mis gifos el gif guardado recientemente 
-    console.log('placeNewGif se está ejecutando')
-    let newGif = document.createElement("div");
-    let imgInside = document.createElement("img"); 
-    newGif.classList.add('gif'); 
-    newGif.appendChild(imgInside);
-    let newGifIndex = urlGifArr.length-1;
-    imgInside.setAttribute('src', urlGifArr[newGifIndex]);
-    document.querySelector('.mg__saved').appendChild(newGif);
-}
-
-function placeRecordedGifs() { 
-    //con esta función se muestran los gifs guardados en la ventana "mis gifos"
-    //cuando cerras la ventana del navegador y entras nuevamente, por ejemplo
-    //es medio parecido a la anterior quizas puedas sintetizarlas en una sola
-    if(localStorage.getItem('serverGifUrl')!==null){
-        urlGifArr=JSON.parse(localStorage.getItem('serverGifUrl'));
-            console.log(urlGifArr.length);
-                console.log('placeRecordedGifs se está ejecutando')
-                for(i=0; i<urlGifArr.length; i++){
-                    let newGif = document.createElement("div");
-                    let imgInside = document.createElement("img"); 
-                    newGif.classList.add('gif');
-                    newGif.appendChild(imgInside);
-                    imgInside.setAttribute('src', urlGifArr[i]);
-                    console.log(i);
-                    document.querySelector('.mg__saved').appendChild(newGif);
-                }
-    }
-}
-
-
