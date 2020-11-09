@@ -645,4 +645,16 @@ a {
  {
    display: none;
  }
+ .createBox{
+  margin-bottom: 10%;
+  display: none;
+  flex-direction: column;
+}
+ .create-gif-section{
+  width: 684px;
+  height: 400px;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  
+}
 }

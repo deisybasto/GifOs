@@ -821,4 +821,21 @@ a {
 .section_timer .loader {
   display: none;
 }
+
+.section_timer .createBox {
+  margin-bottom: 10%;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section_timer .create-gif-section {
+  width: 684px;
+  height: 400px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
 /*# sourceMappingURL=purple-style.css.map */

@@ -1276,4 +1276,91 @@ body {
 .labelCopy {
   display: none;
 }
+
+.createBox {
+  margin-bottom: 10%;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.create-gif-section {
+  position: relative;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 684px;
+  height: 450px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.create-gif-section .create-gif-title {
+  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  position: absolute;
+  padding-right: 593px;
+  padding-left: 10px;
+  top: -14px;
+}
+
+.create-gif-section .create-gif-window {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+
+.create-gif-section .subtitle-window {
+  top: -10px;
+  left: 50px;
+  position: absolute;
+}
+
+.create-gif-section .create-gif-text {
+  padding-left: 50px;
+}
+
+.create-gif-section .create-gif-text .it-bld {
+  font-weight: bold;
+}
+
+.create-gif-section .create-gif-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding-right: 40px;
+  padding-top: 29px;
+}
+
+.create-gif-section .create-gif-btns .btn-create-gif {
+  width: 144px;
+  height: 36px;
+}
+
+.create-gif-section .create-gif-btns .cancel {
+  padding-right: 20px;
+  margin-right: 20px;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.create-gif-section .create-gif-btns .confirm {
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
 /*# sourceMappingURL=pink-style.css.map */

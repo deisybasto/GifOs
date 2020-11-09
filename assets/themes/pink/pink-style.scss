@@ -1047,3 +1047,70 @@ body {
 .labelCopy{
   display: none;
 }
+.createBox{
+  margin-bottom: 10%;
+  display: none;
+  flex-direction: column;
+  position: relative;
+  
+}
+.create-gif-section{
+  position: relative;
+  align-self: center;
+  width: 684px;
+  height: 450px;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  .create-gif-title{
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  position: absolute;
+  padding-right: 593px;
+  padding-left: 10px;
+  top: -14px;
+
+  }
+  .create-gif-window{
+    position: absolute;
+    top: 50px;
+    left: 20px;
+
+  }
+  .subtitle-window{
+    top: -10px;
+    left: 50px;
+    position: absolute;
+  }
+  .create-gif-text{
+    padding-left: 50px;
+    .it-bld{
+      font-weight: bold;
+    }
+  
+  }
+  .create-gif-btns{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 40px;
+    padding-top: 29px;
+    .btn-create-gif{
+      width: 144px;
+      height: 36px;
+    
+    }
+    .cancel{
+      padding-right: 20px;
+      margin-right: 20px;
+      background: #FFF4FD;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    }
+    .confirm{
+      background: #F7C9F3;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    }
+    }
+}
