@@ -1,3 +1,4 @@
+const giphyApiKey='oQ8tvS61Gv8Wgf7zKTKIW06ry9HrANl5'
 async function getResultsFromUrl(urlToFetch, callbackSuccess, callbackDestiny) {
     var requestOptions = {
         method: 'GET',
