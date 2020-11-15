@@ -396,6 +396,17 @@ body {
 
 }
 
+.btnBuscar{
+  background: $btn-alt-back-color;
+  color: $btn-alt-font-color;
+  border: 1px solid $btn-alt-border-color;
+  box-shadow: inset -1px -1px 0 0 $btn-alt-shadow-color1, inset 1px 1px 0 0 $btn-alt-shadow-color2;
+  width: 102px;
+  background: #E6E6E6;
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
 .titleBar {
   margin-left: 1px;
   display: flex;
