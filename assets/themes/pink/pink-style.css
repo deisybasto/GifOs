@@ -190,8 +190,7 @@ body {
 
 .record_button {
   position: absolute;
-  top: 85%;
-  left: 65%;
+  top: 704px;
 }
 
 .record_button .record_capturar {
@@ -203,6 +202,8 @@ body {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  position: absolute;
+  left: 950px;
 }
 
 .record_button .record_capturar a {
@@ -231,8 +232,7 @@ body {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  top: 85%;
-  left: 65%;
+  left: 930px;
   position: absolute;
   display: none;
 }
@@ -265,9 +265,8 @@ body {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  top: 85%;
   width: 350px;
-  left: -150px;
+  left: 790px;
   display: none;
   position: absolute;
 }
@@ -309,8 +308,7 @@ body {
 }
 
 .record_button .cancel_umpload {
-  top: 85%;
-  left: 45px;
+  left: 955px;
   position: absolute;
   display: none;
 }

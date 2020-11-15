@@ -30,8 +30,18 @@ let stopCrono= ()=>{
 }
 
 let paints=()=>{
-    let divBar=document.getElementById("timer_div_1")
+    let themeColor=localStorage.getItem('theme')
+    for(let i=0;i<=sAux;i++){
+    let divBar=document.getElementById(`timer_div_${i}`)
+    console.log(i)
    if(sAux>=1){
-       divBar.style.background='#F7C9F3'
+       if(themeColor=='sailorDay')
+       {
+           divBar.style.background='#F7C9F3'
+        }
+       else{
+          divBar.style.background='#EE3EFE'
+       }
    }
+}
 }

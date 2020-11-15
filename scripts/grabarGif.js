@@ -179,10 +179,7 @@ let recording = () => {
         clearInterval(intervalId);
     
       });
-       
-        
 
-           
             umpload.addEventListener('click',()=>{
             var gifURL = URL.createObjectURL(archivo);
             statusd;

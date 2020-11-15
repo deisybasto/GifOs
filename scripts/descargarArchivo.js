@@ -3,7 +3,6 @@
 
   let labelCopy=document.getElementById('labelCopy')
   
- 
   const key='addArr'
   
   let boxFileDownload= ()=>{
@@ -32,5 +31,4 @@ let copyURL =()=>{
   labelCopy.style.display='block';
   showLabelCopy();
   
-
 }

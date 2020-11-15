@@ -1,4 +1,4 @@
-let GiphyApiKey = "ls1v2WktTF5MQ5RpyEQkhIV7WKIW7PBs";
+let GiphyApiKey = "oQ8tvS61Gv8Wgf7zKTKIW06ry9HrANl5";
 
 const styleLink = document.getElementById('themeCss');
 const themeBarMenu = document.getElementById('themeMenu');

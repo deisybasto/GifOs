@@ -6,9 +6,9 @@ const getTrendingResults = (divSuggestedGifs, limit, offset) => {
 const processTrendingResults = (results, htmlElement) => {   
     htmlElement.innerHTML = "";
     results.data.map(elm => {        
-        var tagsArray = elm.slug.split('-').slice(0, -1);
-        var tagsResult = `#${tagsArray.join(' #')}`;
-        var divNodeHtml =  `<div id="div_${elm.id}" class="item">
+        let tagsArray = elm.slug.split('-').slice(0, 1);
+        let tagsResult = `#${tagsArray.join(' #')}`;
+        let divNodeHtml =  `<div id="div_${elm.id}" class="item">
                                 <img id="img_${elm.id}" 
                                     src="${elm.images.fixed_height.url}" 
                                     class="imgItem"

@@ -30,8 +30,7 @@ let boxViewCreate=()=>{
                 <button class="btn-create-gif confirm" onclick="grabar()"><span>Comenzar</span></button>
                     <a href="index.html">
                     <button  class="btn-create-gif cancel"><span>Cancelar</span></button></a>
-                            
-                    
+
                 </div>
             </div>
         </div>

@@ -136,13 +136,15 @@ body {
 
 .record_button{
   position: absolute;
-  top: 85%;
-  left: 65%;
+  top: 704px;
+  
   
   .record_capturar{
     background-color:$btn-default-color;
     display: flex;
     flex-direction: row-reverse;
+    position: absolute;
+    left: 950px;
 
     a{
       height: 26px;
@@ -165,8 +167,7 @@ body {
 
   .stop_capturar{
     flex-direction: row-reverse;
-    top: 85%;
-    left: 65%;
+     left:930px;
      position:absolute;
     display:none;
 
@@ -192,9 +193,8 @@ body {
   }
   .section_umpload{
    flex-direction:row-reverse;
-   top: 85%;
    width: 350px;
-   left: -150px;
+   left: 790px;
     display: none;
    position:absolute;
   .umpload_captura{
@@ -232,8 +232,7 @@ body {
   
 }
 .cancel_umpload{
-  top: 85%;
-  left: 45px;
+  left: 955px;
   position:absolute;
   display: none;
   :hover{
