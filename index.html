@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-
+    <html lang="es">
 <head>
     <title>GifOs</title>
     <link rel="stylesheet" href="./assets/themes/pink/pink-style.css" rel="stylesheet" media="all" id="themeCss" />
@@ -16,10 +16,10 @@
             <span class="header__counter js-counter"></span>
         </span>
     </header>
-    <section class="search">
+    <div class="search">
         <div class="container">
             <div class="actionBar">
-                <img class="logo">
+                <img class="logo" alt="image">
                 <div class="buttonsBar">
                     <button class="btn btnDefault" onclick="boxViewCreate()">Crear Guifos</button>
                     <div class="themesBar">
@@ -39,6 +39,7 @@
                     </div>
                 </div>
             </div>
+          
             <section id="createBox" class="createBox"></section>
             <div class="window">
                 <div class="titleBar">
@@ -53,16 +54,17 @@
             </div>
             <div id="tagsBar" class="tagsBar">
             </div>
-    </section>
-    <section id="search-results" class="results">
+        </div>
+    <div id="search-results" class="results">
         <div class="container">
             <div id="divResultsTags" class="resultsTags"></div>
         </div>
         <div class="container">
             <div id="divResultsText" class="resultsGifs"></div>
         </div>        
-    </section>
-    <section class="suggestions" id="suggestions">
+    </div>
+    <div class="suggestions" id="suggestions">
+        
         <div class="container">
             <input type="text" class="titleInput" value="Hoy te sugerimos:" readonly />
             <div id="gif_suggested"></div>
@@ -72,7 +74,7 @@
             <div id="divSuggestedGifs" class="suggestedGifs">
             </div>
         </div>
-    </section>
+    </div>
 
   
     <footer>
