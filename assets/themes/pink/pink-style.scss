@@ -405,6 +405,15 @@ body {
   background: #E6E6E6;
   border: 1px solid #808080;
   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  display: flex;
+  position: absolute;
+  left: 1215px;
+    top: 171px;
+ .fa-search{
+  padding-right: 11px;
+  align-self: center;
+  padding-inline-start: 11px;
+ }
 }
 
 .titleBar {
