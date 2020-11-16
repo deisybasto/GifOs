@@ -5,7 +5,7 @@ class SearchPath {
 
         wordSearch,
         endpoint,
-        apiKey = "ls1v2WktTF5MQ5RpyEQkhIV7WKIW7PBs",
+        apiKey = "oQ8tvS61Gv8Wgf7zKTKIW06ry9HrANl5",
 
     ) {
         this.endpoint = endpoint;
